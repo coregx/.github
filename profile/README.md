@@ -17,36 +17,36 @@
 
 ### Text Processing
 
-| Library | Description | Stars | Status |
-|:--------|:------------|:-----:|:------:|
-| **[coregex](https://github.com/coregx/coregex)** | Regex engine, 3-3000x faster than stdlib, SIMD | [![](https://img.shields.io/github/stars/coregx/coregex?style=flat-square&label=)](https://github.com/coregx/coregex) | v0.9.1 |
-| **[ahocorasick](https://github.com/coregx/ahocorasick)** | Aho-Corasick multi-pattern matching | [![](https://img.shields.io/github/stars/coregx/ahocorasick?style=flat-square&label=)](https://github.com/coregx/ahocorasick) | v0.2.x |
+| Library | Description | Version | Stars | Issues | PRs |
+|:--------|:------------|:-------:|:-----:|:------:|:---:|
+| **[coregex](https://github.com/coregx/coregex)** | Regex engine, 3-3000x faster, SIMD | [![](https://img.shields.io/github/v/release/coregx/coregex?style=flat-square&label=)](https://github.com/coregx/coregex/releases) | [![](https://img.shields.io/github/stars/coregx/coregex?style=flat-square&label=)](https://github.com/coregx/coregex) | [![](https://img.shields.io/github/issues/coregx/coregex?style=flat-square&label=)](https://github.com/coregx/coregex/issues) | [![](https://img.shields.io/github/issues-pr/coregx/coregex?style=flat-square&label=)](https://github.com/coregx/coregex/pulls) |
+| **[ahocorasick](https://github.com/coregx/ahocorasick)** | Aho-Corasick multi-pattern matching | [![](https://img.shields.io/github/v/release/coregx/ahocorasick?style=flat-square&label=)](https://github.com/coregx/ahocorasick/releases) | [![](https://img.shields.io/github/stars/coregx/ahocorasick?style=flat-square&label=)](https://github.com/coregx/ahocorasick) | [![](https://img.shields.io/github/issues/coregx/ahocorasick?style=flat-square&label=)](https://github.com/coregx/ahocorasick/issues) | [![](https://img.shields.io/github/issues-pr/coregx/ahocorasick?style=flat-square&label=)](https://github.com/coregx/ahocorasick/pulls) |
 
 ### Web & HTTP
 
-| Library | Description | Stars | Status |
-|:--------|:------------|:-----:|:------:|
-| **[fursy](https://github.com/coregx/fursy)** | HTTP router, type-safe handlers, OpenAPI gen | [![](https://img.shields.io/github/stars/coregx/fursy?style=flat-square&label=)](https://github.com/coregx/fursy) | Active |
-| **[stream](https://github.com/coregx/stream)** | SSE & WebSocket, RFC-compliant, zero deps | [![](https://img.shields.io/github/stars/coregx/stream?style=flat-square&label=)](https://github.com/coregx/stream) | v1.x |
+| Library | Description | Version | Stars | Issues | PRs |
+|:--------|:------------|:-------:|:-----:|:------:|:---:|
+| **[fursy](https://github.com/coregx/fursy)** | HTTP router, type-safe, OpenAPI gen | [![](https://img.shields.io/github/v/release/coregx/fursy?style=flat-square&label=)](https://github.com/coregx/fursy/releases) | [![](https://img.shields.io/github/stars/coregx/fursy?style=flat-square&label=)](https://github.com/coregx/fursy) | [![](https://img.shields.io/github/issues/coregx/fursy?style=flat-square&label=)](https://github.com/coregx/fursy/issues) | [![](https://img.shields.io/github/issues-pr/coregx/fursy?style=flat-square&label=)](https://github.com/coregx/fursy/pulls) |
+| **[stream](https://github.com/coregx/stream)** | SSE & WebSocket, RFC-compliant | [![](https://img.shields.io/github/v/release/coregx/stream?style=flat-square&label=)](https://github.com/coregx/stream/releases) | [![](https://img.shields.io/github/stars/coregx/stream?style=flat-square&label=)](https://github.com/coregx/stream) | [![](https://img.shields.io/github/issues/coregx/stream?style=flat-square&label=)](https://github.com/coregx/stream/issues) | [![](https://img.shields.io/github/issues-pr/coregx/stream?style=flat-square&label=)](https://github.com/coregx/stream/pulls) |
 
 ### Data & Messaging
 
-| Library | Description | Stars | Status |
-|:--------|:------------|:-----:|:------:|
-| **[relica](https://github.com/coregx/relica)** | Type-safe SQL query builder, zero prod deps | [![](https://img.shields.io/github/stars/coregx/relica?style=flat-square&label=)](https://github.com/coregx/relica) | Active |
-| **[pubsub](https://github.com/coregx/pubsub)** | Pub/Sub with DLQ, backoff, clean architecture | [![](https://img.shields.io/github/stars/coregx/pubsub?style=flat-square&label=)](https://github.com/coregx/pubsub) | Active |
+| Library | Description | Version | Stars | Issues | PRs |
+|:--------|:------------|:-------:|:-----:|:------:|:---:|
+| **[relica](https://github.com/coregx/relica)** | Type-safe SQL query builder | [![](https://img.shields.io/github/v/release/coregx/relica?style=flat-square&label=)](https://github.com/coregx/relica/releases) | [![](https://img.shields.io/github/stars/coregx/relica?style=flat-square&label=)](https://github.com/coregx/relica) | [![](https://img.shields.io/github/issues/coregx/relica?style=flat-square&label=)](https://github.com/coregx/relica/issues) | [![](https://img.shields.io/github/issues-pr/coregx/relica?style=flat-square&label=)](https://github.com/coregx/relica/pulls) |
+| **[pubsub](https://github.com/coregx/pubsub)** | Pub/Sub with DLQ, backoff | [![](https://img.shields.io/github/v/release/coregx/pubsub?style=flat-square&label=)](https://github.com/coregx/pubsub/releases) | [![](https://img.shields.io/github/stars/coregx/pubsub?style=flat-square&label=)](https://github.com/coregx/pubsub) | [![](https://img.shields.io/github/issues/coregx/pubsub?style=flat-square&label=)](https://github.com/coregx/pubsub/issues) | [![](https://img.shields.io/github/issues-pr/coregx/pubsub?style=flat-square&label=)](https://github.com/coregx/pubsub/pulls) |
 
 ### Reactive
 
-| Library | Description | Stars | Status |
-|:--------|:------------|:-----:|:------:|
-| **[signals](https://github.com/coregx/signals)** | Reactive state, Angular-inspired, zero allocs | [![](https://img.shields.io/github/stars/coregx/signals?style=flat-square&label=)](https://github.com/coregx/signals) | Active |
+| Library | Description | Version | Stars | Issues | PRs |
+|:--------|:------------|:-------:|:-----:|:------:|:---:|
+| **[signals](https://github.com/coregx/signals)** | Reactive state, Angular-inspired | [![](https://img.shields.io/github/v/release/coregx/signals?style=flat-square&label=)](https://github.com/coregx/signals/releases) | [![](https://img.shields.io/github/stars/coregx/signals?style=flat-square&label=)](https://github.com/coregx/signals) | [![](https://img.shields.io/github/issues/coregx/signals?style=flat-square&label=)](https://github.com/coregx/signals/issues) | [![](https://img.shields.io/github/issues-pr/coregx/signals?style=flat-square&label=)](https://github.com/coregx/signals/pulls) |
 
 ### Documents
 
-| Library | Description | Stars | Status |
-|:--------|:------------|:-----:|:------:|
-| **gxpdf** | Pure Go PDF generation & manipulation | — | Coming Soon |
+| Library | Description | Version | Stars | Issues | PRs |
+|:--------|:------------|:-------:|:-----:|:------:|:---:|
+| **gxpdf** | Pure Go PDF generation & manipulation | — | — | — | Coming Soon |
 
 ---
 
