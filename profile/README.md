@@ -42,6 +42,12 @@
 |:--------|:------------|:-----:|:------:|
 | **[signals](https://github.com/coregx/signals)** | Reactive state, Angular-inspired, zero allocs | [![](https://img.shields.io/github/stars/coregx/signals?style=flat-square&label=)](https://github.com/coregx/signals) | Active |
 
+### Documents
+
+| Library | Description | Stars | Status |
+|:--------|:------------|:-----:|:------:|
+| **gxpdf** | Pure Go PDF generation & manipulation | — | Coming Soon |
+
 ---
 
 ## Highlights
