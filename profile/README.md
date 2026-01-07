@@ -46,7 +46,7 @@
 
 | Library | Description | Version | Stars | Issues | PRs |
 |:--------|:------------|:-------:|:-----:|:------:|:---:|
-| **gxpdf** | Pure Go PDF generation & manipulation | — | — | — | Coming Soon |
+| **[gxpdf](https://github.com/coregx/gxpdf)** | Pure Go PDF generation & manipulation | [![](https://img.shields.io/github/v/release/coregx/gxpdf?style=flat-square&label=)](https://github.com/coregx/gxpdf/releases) | [![](https://img.shields.io/github/stars/coregx/gxpdf?style=flat-square&label=)](https://github.com/coregx/gxpdf) | [![](https://img.shields.io/github/issues/coregx/gxpdf?style=flat-square&label=)](https://github.com/coregx/gxpdf/issues) | [![](https://img.shields.io/github/issues-pr/coregx/gxpdf?style=flat-square&label=)](https://github.com/coregx/gxpdf/pulls) |
 
 ---
 
@@ -58,12 +58,12 @@ Cross-language benchmarks on 6MB input ([source](https://github.com/kolkov/regex
 
 | Pattern | Go stdlib | coregex | Rust regex | vs stdlib |
 |---------|-----------|---------|------------|-----------|
-| IP validation | 493 ms | 3.2 ms | 12 ms | **154x** |
-| Inner `.*keyword.*` | 231 ms | 1.9 ms | 0.6 ms | **122x** |
-| Suffix `.*\.txt` | 233 ms | 1.8 ms | 1.4 ms | **127x** |
-| Literal alternation | 473 ms | 4.2 ms | 0.7 ms | **113x** |
+| Suffix `.*\.txt` | 233 ms | 0.98 ms | 1.34 ms | **238x** |
+| Email | 260 ms | 1.51 ms | 1.40 ms | **172x** |
+| IP validation | 494 ms | 3.80 ms | 12.28 ms | **130x** |
+| Multi-literal | 1436 ms | 12.4 ms | 4.91 ms | **115x** |
 
-**Beats Rust regex on IP patterns by 2.7x!** 13 specialized engines, SIMD acceleration, O(n) guaranteed.
+**Beats Rust regex on 3 patterns**: ip (3.2x), char_class (1.5x), suffix (1.4x). 13 specialized engines, SIMD acceleration, O(n) guaranteed.
 
 ### relica — Type-Safe SQL
 
