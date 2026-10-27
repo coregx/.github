@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/coregx"><img src="https://img.shields.io/badge/Go-1.25+-00ADD8?style=flat&logo=go" alt="Go Version"></a>
+  <a href="https://go.dev/dl/"><img src="https://img.shields.io/badge/Go-1.24%E2%80%931.27-00ADD8?style=flat&logo=go" alt="Go Version"></a>
   <a href="https://github.com/coregx"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"></a>
   <a href="https://github.com/coregx"><img src="https://img.shields.io/badge/CGO-Zero-brightgreen?style=flat" alt="Zero CGO"></a>
 </p>
@@ -55,38 +55,53 @@
 
 ### coregex — 3-3000x Faster Regex
 
-Cross-language benchmarks on 6MB input ([source](https://github.com/kolkov/regex-bench)):
+Cross-language benchmarks on 6MB input, AMD EPYC ([source](https://github.com/kolkov/regex-bench), full table in the [coregex README](https://github.com/coregx/coregex#performance)):
 
 | Pattern | Go stdlib | coregex | Rust regex | vs stdlib |
 |---------|-----------|---------|------------|-----------|
-| Suffix `.*\.txt` | 233 ms | 0.98 ms | 1.34 ms | **238x** |
-| Email | 260 ms | 1.51 ms | 1.40 ms | **172x** |
-| IP validation | 494 ms | 3.80 ms | 12.28 ms | **130x** |
-| Multi-literal | 1436 ms | 12.4 ms | 4.91 ms | **115x** |
+| Inner `.*keyword.*` | 232 ms | 0.26 ms | 13.6 ms | **893x** |
+| IP address | 489 ms | 0.77 ms | 13.5 ms | **635x** |
+| Email validation | 257 ms | 0.55 ms | 0.26 ms | **467x** |
+| Suffix `.*\.txt` | 236 ms | 1.79 ms | 13.7 ms | **132x** |
 
-**Beats Rust regex on 3 patterns**: ip (3.2x), char_class (1.5x), suffix (1.4x). 13 specialized engines, SIMD acceleration, O(n) guaranteed.
+**Faster than Rust regex on 6 of 12 patterns**, e.g. inner literals (52x), IP addresses (17.6x), suffixes (7.7x). 16 search strategies, SIMD prefilters, O(n) guaranteed — no backtracking, no ReDoS.
 
 ### relica — Type-Safe SQL
 
 ```go
-users := relica.Select("id", "name").
+var users []User
+err := db.Select("id", "name").
     From("users").
-    Where(relica.Eq("active", true)).
+    Where(relica.And(
+        relica.Eq("status", "active"),
+        relica.GreaterThan("age", 18),
+    )).
     OrderBy("created_at DESC").
-    Limit(10)
+    Limit(10).
+    WithContext(ctx).
+    All(&users)
 ```
 
-Advanced features: JOINs, subqueries, CTEs, window functions. 3x faster batch operations.
+Advanced features: JOINs, subqueries, CTEs, window functions. Batch INSERT 3.3x faster than individual inserts.
 
 ### fursy — Modern HTTP Router
 
 ```go
-r := fursy.New()
-r.Get("/users/{id}", handlers.GetUser)  // Type-safe params
-// Auto-generates OpenAPI 3.1 spec
+router := fursy.New()
+
+// Plain handler, path parameter
+router.Handle("GET", "/users/:id", func(c *fursy.Context) error {
+    return c.OK(map[string]string{"id": c.Param("id")})
+})
+
+// Type-safe handler: request body bound (and validated), response typed
+router.POST("/users", func(c *fursy.Box[CreateUserRequest, UserResponse]) error {
+    user := createUser(c.ReqBody)
+    return c.Created("/users/"+user.ID, user)
+})
 ```
 
-RFC 9457 errors, built-in validation, minimal dependencies.
+Built-in OpenAPI 3.1 generation, RFC 9457 errors, pluggable validation, minimal dependencies.
 
 ---
 
@@ -95,7 +110,7 @@ RFC 9457 errors, built-in validation, minimal dependencies.
 - **Zero CGO** — Simple `go build`, no C compiler needed
 - **Minimal Dependencies** — Only what's absolutely necessary
 - **Production-Grade** — Battle-tested, well-documented, maintained
-- **Go 1.25+** — Modern Go features, generics where useful
+- **Modern Go** — Generics where useful; each library states its minimum Go version in its `go.mod`
 
 ---
 
@@ -103,7 +118,7 @@ RFC 9457 errors, built-in validation, minimal dependencies.
 
 | Project | Description | Using |
 |:--------|:------------|:------|
-| **[uawk](https://github.com/kolkov/uawk)** | Ultra AWK interpreter, 19x faster than GoAWK | coregex |
+| **[uawk](https://github.com/kolkov/uawk)** | AWK interpreter, POSIX-compliant with GNU extensions, parallel file processing | coregex |
 
 ---
 
