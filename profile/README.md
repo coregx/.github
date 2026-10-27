@@ -118,7 +118,7 @@ Built-in OpenAPI 3.1 generation, RFC 9457 errors, pluggable validation, minimal 
 
 | Project | Description | Using |
 |:--------|:------------|:------|
-| **[uawk](https://github.com/kolkov/uawk)** | AWK interpreter, POSIX-compliant with GNU extensions, parallel file processing | coregex |
+| **[uawk](https://github.com/kolkov/uawk)** | Ultra AWK interpreter, faster than GoAWK on all 16 benchmarks, parallel file processing | coregex |
 
 ---
 
